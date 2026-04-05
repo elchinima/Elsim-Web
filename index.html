@@ -83,7 +83,6 @@
             font-family: 'DM Sans', sans-serif;
             font-weight: 300;
             overflow-x: hidden;
-            cursor: none;
         }
 
         .products-a {
@@ -247,7 +246,7 @@
             font-size: 10px;
             letter-spacing: 2px;
             color: var(--muted2);
-            cursor: none;
+            cursor: pointer;
             padding: 5px 9px;
             transition: color .2s;
             text-transform: uppercase;
@@ -576,6 +575,7 @@
             height: 500px;
             margin-left: 25px;
             margin-right: 25px;
+            border-radius: 8px;
         }
 
             .pc::before {
@@ -727,7 +727,6 @@
             padding: 30px 0;
             border-bottom: 1px solid var(--border);
             gap: 32px;
-            cursor: none;
             position: relative;
             transition: padding-left .4s cubic-bezier(.77,0,.18,1);
         }
@@ -1079,7 +1078,21 @@
             transition-delay: .4s;
         }
 
-        @media (max-width: 768px) {
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: none;
+            }
+
+            .lb {
+                cursor: none;
+            }
+
+            .pi {
+                cursor: none;
+            }
+        }
+
+        @media (min-width: 729px) and (max-width: 1120px) {
             nav {
                 padding: 18px 22px;
             }
@@ -1106,6 +1119,24 @@
 
             .pg {
                 grid-template-columns: 1fr;
+                margin-right: 25px;
+                width: 100%;
+            }
+
+            .p-tag {
+                margin-top: 100px;
+            }
+
+            .p-price {
+                display: none;
+            }
+
+            .p-feats li {
+                font-size: 8px;
+            }
+
+            .p-desc {
+                font-size: 12px;
             }
 
             .contact-inner {
@@ -1126,6 +1157,90 @@
                 gap: 16px;
                 text-align: center;
             }
+        }
+
+        @media (max-width: 728px) {
+            .pg {
+                grid-template-columns: 1fr;
+                margin-right: 25px;
+                width: 100%;
+                transform: scale(1.1);
+            }
+
+            .pc {
+                max-height: 1000px;
+                padding: 56px 28px;
+            }
+
+            nav {
+                padding: 18px 22px;
+            }
+
+            .nl {
+                display: none;
+            }
+
+            .hero {
+                padding: 0 22px 60px;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                display: none;
+            }
+
+            section {
+                padding: 80px 22px;
+            }
+
+            .p-tag {
+                margin-top: 100px;
+                font-size: 6px;
+            }
+
+            .p-price {
+                display: none;
+            }
+
+            .p-feats li {
+                font-size: 8px;
+            }
+
+            .p-desc {
+                font-size: 12px;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .pi {
+                grid-template-columns: 48px 1fr;
+            }
+
+            .p-num {
+                margin-top: -25px;
+                transform: translateX(20px);
+            }
+
+            .p-name {
+                font-size: 35px;
+            }
+
+            .pi-tags, .pi-year {
+                display: none;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
         }
     </style>
 </head>
@@ -1302,7 +1417,7 @@
                     </div>
                     <div class="c-row">
                         <span class="c-label">Email</span>
-                        <span class="c-val"><a href="https://mail.google.com/"><span class="__cf_email__" data-cfemail="543138273d39303122143339353d387a373b39">elsimdev@gmail.com</span></a></span>
+                        <span class="c-val"><a href="https://mail.google.com/">elsimdev@gmail.com</a></span>
                     </div>
                     <div class="c-row">
                         <span class="c-label" data-i18n="loc">Location</span>
@@ -1324,7 +1439,7 @@
                         <div class="tg-icon">✉</div>
                         <div class="tg-info">
                             <div class="tg-name">EMAIL US</div>
-                            <div class="tg-hint"><span class="__cf_email__" data-cfemail="0e6b627d67636a6b784e69636f6762206d6163">elsimdev@gmail.com</span></div>
+                            <div class="tg-hint">elsimdev@gmail.com</div>
                         </div>
                         <div class="tg-arr">↗</div>
                     </a>
@@ -1343,7 +1458,6 @@
         <span class="f-copy">© 2026 Elsim. All rights reserved.</span>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         const T = {
             en: {
@@ -1426,16 +1540,20 @@
         applyLang(localStorage.getItem('elsim_lang') || 'en');
 
         const cur = document.getElementById('cur');
-        let mx = 0, my = 0;
-        document.addEventListener('mousemove', e => {
-            mx = e.clientX; my = e.clientY;
-            cur.style.left = mx + 'px';
-            cur.style.top = my + 'px';
-        });
-        document.querySelectorAll('a, button, .pi, .pc').forEach(el => {
-            el.addEventListener('mouseenter', () => cur.classList.add('expand'));
-            el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
-        });
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            let mx = 0, my = 0;
+            document.addEventListener('mousemove', e => {
+                mx = e.clientX; my = e.clientY;
+                cur.style.left = mx + 'px';
+                cur.style.top = my + 'px';
+            });
+            document.querySelectorAll('a, button, .pi, .pc').forEach(el => {
+                el.addEventListener('mouseenter', () => cur.classList.add('expand'));
+                el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
+            });
+        } else {
+            cur.style.display = 'none';
+        }
 
         window.addEventListener('scroll', () => {
             document.getElementById('nav').classList.toggle('on', scrollY > 60);
@@ -1451,9 +1569,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
 
-        window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('loader').classList.add('done'), 900);
-        });
+        setTimeout(() => document.getElementById('loader').classList.add('done'), 1200);
     </script>
 
     <script defer src="/_vercel/insights/script.js"></script>
