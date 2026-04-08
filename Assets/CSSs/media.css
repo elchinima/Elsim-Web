@@ -1,0 +1,166 @@
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    .lb {
+        cursor: none;
+    }
+
+    .pi {
+        cursor: none;
+    }
+}
+
+@media (min-width: 729px) and (max-width: 1120px) {
+    nav {
+        padding: 18px 22px;
+    }
+
+    .nl {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 22px 60px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        display: none;
+    }
+
+    section {
+        padding: 80px 22px;
+    }
+
+    .pg {
+        grid-template-columns: 1fr;
+        margin-right: 25px;
+        width: 100%;
+    }
+
+    .p-tag {
+        margin-top: 100px;
+    }
+
+    .p-price {
+        display: none;
+    }
+
+    .p-feats li {
+        font-size: 8px;
+    }
+
+    .p-desc {
+        font-size: 12px;
+    }
+
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .pi {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .pi-tags,
+    .pi-year {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 728px) {
+    .pg {
+        grid-template-columns: 1fr;
+        margin-right: 25px;
+        width: 100%;
+        transform: scale(1.1);
+    }
+
+    .pc {
+        max-height: 1000px;
+        padding: 56px 28px;
+    }
+
+    nav {
+        padding: 18px 22px;
+    }
+
+    .nl {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 22px 60px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        display: none;
+    }
+
+    section {
+        padding: 80px 22px;
+    }
+
+    .p-tag {
+        margin-top: 100px;
+        font-size: 6px;
+    }
+
+    .p-price {
+        display: none;
+    }
+
+    .p-feats li {
+        font-size: 8px;
+    }
+
+    .p-desc {
+        font-size: 12px;
+    }
+
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .pi {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .p-num {
+        margin-top: -25px;
+        transform: translateX(20px);
+    }
+
+    .p-name {
+        font-size: 35px;
+    }
+
+    .pi-tags,
+    .pi-year {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
