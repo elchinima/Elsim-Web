@@ -33,6 +33,9 @@
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Elsim","url":"https://elsim.dev","logo":"https://i.imgur.com/uMqXPgY.png","description":"Software development studio from Baku, Azerbaijan. Creators of Shapix and Dev Helper.","email":"elsimdev@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Baku","addressCountry":"AZ"},"sameAs":["https://t.me/ElsimCore"]}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@200;300;400&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@200;300;400&display=swap"
         rel="stylesheet">
@@ -51,7 +54,7 @@
         </div>
     </div>
 
-    <nav id="nav">
+    <nav id="nav" aria-label="Main navigation">
         <a href="#" class="logo">ELS<em>IM</em></a>
         <div class="nav-r">
             <div class="langs">
@@ -64,8 +67,19 @@
                 <li><a href="#portfolio" data-i18n="nav2">Portfolio</a></li>
                 <li><a href="#contact" data-i18n="nav3">Contact</a></li>
             </ul>
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+        <a href="#products" data-i18n="nav1" class="mm-link">Products</a>
+        <a href="#portfolio" data-i18n="nav2" class="mm-link">Portfolio</a>
+        <a href="#contact" data-i18n="nav3" class="mm-link">Contact</a>
+    </div>
 
     <section class="hero" id="home">
         <div class="ring ring1"></div>
@@ -111,12 +125,17 @@
             <span class="marquee-item">ANDROID GAME<span class="marquee-dot"></span></span>
             <span class="marquee-item">BROWSER EXTENSION<span class="marquee-dot"></span></span>
             <span class="marquee-item">BAKU · AZERBAIJAN<span class="marquee-dot"></span></span>
+            <span class="marquee-item">ECODE<span class="marquee-dot"></span></span>
+            <span class="marquee-item">WEB<span class="marquee-dot"></span></span>
+
             <span class="marquee-item">ELSIM<span class="marquee-dot"></span></span>
             <span class="marquee-item">SHAPIX<span class="marquee-dot"></span></span>
             <span class="marquee-item">DEV HELPER<span class="marquee-dot"></span></span>
             <span class="marquee-item">ANDROID GAME<span class="marquee-dot"></span></span>
             <span class="marquee-item">BROWSER EXTENSION<span class="marquee-dot"></span></span>
             <span class="marquee-item">BAKU · AZERBAIJAN<span class="marquee-dot"></span></span>
+            <span class="marquee-item">ECODE<span class="marquee-dot"></span></span>
+            <span class="marquee-item">WEB<span class="marquee-dot"></span></span>
         </div>
     </div>
 
@@ -195,7 +214,7 @@
                 </div>
                 <span class="pi-year">2023</span>
             </div>
-            <div class="pi" data-reveal>
+            <a class="pi" href="https://shapix.vercel.app" target="_blank" data-reveal>
                 <span class="pi-n">002</span>
                 <span class="pi-name">SHAPIX</span>
                 <div class="pi-tags">
@@ -203,8 +222,8 @@
                     <span class="pi-tag">Android</span>
                 </div>
                 <span class="pi-year">2026</span>
-            </div>
-            <div class="pi" data-reveal="delay1">
+            </a>
+            <a class="pi" href="https://dev-helper-browser.vercel.app" target="_blank" data-reveal="delay1">
                 <span class="pi-n">003</span>
                 <span class="pi-name">DEV HELPER</span>
                 <div class="pi-tags">
@@ -213,15 +232,15 @@
                     <span class="pi-tag">Edge</span>
                 </div>
                 <span class="pi-year">2026</span>
-            </div>
-            <div class="pi" data-reveal="delay2">
+            </a>
+            <a class="pi" href="https://elsim-ecode.vercel.app" target="_blank" data-reveal="delay2">
                 <span class="pi-n">004</span>
                 <span class="pi-name">ECODE</span>
                 <div class="pi-tags">
                     <span class="pi-tag" data-i18n="tagWeb">Website</span>
                 </div>
                 <span class="pi-year">2026</span>
-            </div>
+            </a>
 
         </div>
         </div>
@@ -243,7 +262,7 @@
                     </div>
                     <div class="c-row">
                         <span class="c-label">Email</span>
-                        <span class="c-val"><a href="https://mail.google.com/">elsimdev@gmail.com</a></span>
+                        <span class="c-val"><a href="mailto:elsimdev@gmail.com">elsimdev@gmail.com</a></span>
                     </div>
                     <div class="c-row">
                         <span class="c-label" data-i18n="loc">Location</span>
@@ -261,7 +280,7 @@
                         </div>
                         <div class="tg-arr">↗</div>
                     </a>
-                    <a href="https://mail.google.com/" class="tg-card">
+                    <a href="mailto:elsimdev@gmail.com" class="tg-card">
                         <div class="tg-icon">✉</div>
                         <div class="tg-info">
                             <div class="tg-name">EMAIL US</div>

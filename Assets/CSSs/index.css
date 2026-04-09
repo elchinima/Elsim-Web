@@ -46,6 +46,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -59,7 +60,6 @@ body {
 .products-a {
     text-decoration: none;
     color: white;
-    margin-top: 100px;
 }
 
 .cur {
@@ -160,7 +160,7 @@ nav {
     justify-content: space-between;
     padding: 24px 56px;
     z-index: 100;
-    transition: all .5s;
+    transition: background .5s, padding .5s, border-color .5s;
 }
 
 nav.on {
@@ -265,6 +265,74 @@ nav.on {
 
 .nl a:hover::after {
     width: 100%;
+}
+
+/* Burger menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+    z-index: 200;
+}
+
+.burger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--fg);
+    transition: transform .35s cubic-bezier(.77, 0, .18, 1), opacity .2s;
+    transform-origin: center;
+}
+
+.burger.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.burger.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 6, 6, .97);
+    backdrop-filter: blur(20px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+}
+
+.mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-menu a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 8px;
+    color: var(--muted2);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.mobile-menu a:hover {
+    color: var(--fg);
 }
 
 .hero {
@@ -534,6 +602,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
+    row-gap: 52px;
 }
 
 .pc {
@@ -688,6 +757,11 @@ section {
 .pl {
     display: flex;
     flex-direction: column;
+}
+
+a.pi {
+    color: var(--fg);
+    text-decoration: none;
 }
 
 .pi {
@@ -1034,18 +1108,18 @@ footer {
     transform: translateY(0);
 }
 
-[data-reveal="delay1"] {
+[data-reveal="delay1"].vis {
     transition-delay: .1s;
 }
 
-[data-reveal="delay2"] {
+[data-reveal="delay2"].vis {
     transition-delay: .2s;
 }
 
-[data-reveal="delay3"] {
+[data-reveal="delay3"].vis {
     transition-delay: .3s;
 }
 
-[data-reveal="delay4"] {
+[data-reveal="delay4"].vis {
     transition-delay: .4s;
 }

@@ -1,4 +1,8 @@
 @media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none;
+    }
+    
     body {
         cursor: none;
     }
@@ -21,6 +25,14 @@
         display: none;
     }
 
+    .burger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
     .hero {
         padding: 0 22px 60px;
     }
@@ -41,6 +53,7 @@
         grid-template-columns: 1fr;
         margin-right: 25px;
         width: 100%;
+        ma
     }
 
     .p-tag {
@@ -85,6 +98,7 @@
     .pg {
         grid-template-columns: 1fr;
         margin-right: 25px;
+        margin-top: 150px;
         width: 100%;
         transform: scale(1.1);
     }
@@ -100,6 +114,14 @@
 
     .nl {
         display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
     }
 
     .hero {
