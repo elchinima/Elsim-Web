@@ -9,8 +9,6 @@
     --dim2: #111;
 }
 
-
-
 * {
     -webkit-tap-highlight-color: transparent;
 }
@@ -269,7 +267,6 @@ nav.on {
     width: 100%;
 }
 
-/* Burger menu */
 .burger {
     display: none;
     flex-direction: column;
@@ -360,7 +357,6 @@ nav.on {
     top: -280px;
     right: -180px;
     border-color: #141414;
-    animation: spin 50s linear infinite;
 }
 
 .ring2 {
@@ -369,7 +365,6 @@ nav.on {
     top: -140px;
     right: -60px;
     border-color: #111;
-    animation: spin 35s linear infinite reverse;
 }
 
 .ring3 {
@@ -378,13 +373,6 @@ nav.on {
     top: 60px;
     right: 120px;
     border-color: #0f0f0f;
-    animation: spin 20s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .hero::before {
@@ -527,6 +515,7 @@ nav.on {
 }
 
 .marquee-wrap {
+    --marquee-duration: 25s;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 18px 0;
@@ -537,7 +526,10 @@ nav.on {
 .marquee-track {
     display: flex;
     gap: 0;
-    animation: marquee 18s linear infinite;
+    width: max-content;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    animation: marquee var(--marquee-duration) linear infinite;
     white-space: nowrap;
 }
 
@@ -565,11 +557,11 @@ nav.on {
 
 @keyframes marquee {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translate3d(calc(-1 * var(--marquee-shift, 50%)), 0, 0);
     }
 }
 

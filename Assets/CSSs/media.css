@@ -2,7 +2,7 @@
     * {
         cursor: none;
     }
-    
+
     body {
         cursor: none;
     }
@@ -17,7 +17,15 @@
 }
 
 @media (min-width: 729px) and (max-width: 1120px) {
+    .marquee-wrap {
+        --marquee-duration: 20s;
+    }
+
     nav {
+        padding: 18px 22px;
+    }
+
+    nav.on {
         padding: 18px 22px;
     }
 
@@ -53,7 +61,6 @@
         grid-template-columns: 1fr;
         margin-right: 25px;
         width: 100%;
-        ma
     }
 
     .p-tag {
@@ -95,6 +102,10 @@
 
 
 @media (max-width: 728px) {
+    .marquee-wrap {
+        --marquee-duration: 15s;
+    }
+
     .pg {
         grid-template-columns: 1fr;
         margin-right: 25px;
@@ -109,6 +120,10 @@
     }
 
     nav {
+        padding: 18px 22px;
+    }
+
+    nav.on {
         padding: 18px 22px;
     }
 
