@@ -45,6 +45,10 @@
         padding: 0 22px 60px;
     }
 
+    .ring {
+        display: none;
+    }
+
     .hero-inner {
         grid-template-columns: 1fr;
     }
@@ -141,6 +145,10 @@
 
     .hero {
         padding: 0 22px 60px;
+    }
+
+    .ring {
+        display: none;
     }
 
     .hero-inner {

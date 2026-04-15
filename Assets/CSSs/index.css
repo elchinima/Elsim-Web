@@ -349,6 +349,8 @@ nav.on {
     border-radius: 50%;
     border: 1px solid;
     pointer-events: none;
+    z-index: 0;
+    will-change: transform, opacity;
 }
 
 .ring1 {
@@ -383,6 +385,7 @@ nav.on {
     background-size: 80px 80px;
     opacity: .4;
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-inner {
